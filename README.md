@@ -1,1 +1,1 @@
-# Wordpress-Coffee-Travel-Blog
+# Wordpress-Coffee-Travel-Blog_Template
