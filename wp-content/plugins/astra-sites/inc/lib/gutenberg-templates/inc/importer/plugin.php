@@ -1041,7 +1041,7 @@ class Plugin {
 			$business_details = array(
 				'business_name' => isset( $zip_user_business_details['business_name'] ) ? $zip_user_business_details['business_name'] : '',
 				'business_description' => isset( $zip_user_business_details['business_description'] ) ? $zip_user_business_details['business_description'] : '',
-				'business_category' => isset( $zip_user_business_details['category_name'] ) ? strtolower( $zip_user_business_details['category_name'] ) : '',
+				'business_category' => isset( $zip_user_business_details['category_slug'] ) ? $zip_user_business_details['category_slug'] : '',
 				'images' => $filtered_images,
 				'image_keywords' => isset( $zip_user_business_details['image_keyword'] ) ? $zip_user_business_details['image_keyword'] : array(),
 				'business_address' => isset( $zip_user_business_details['business_address'] ) ? $zip_user_business_details['business_address'] : '',

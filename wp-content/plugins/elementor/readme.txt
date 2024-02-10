@@ -4,7 +4,7 @@ Tags: page builder, editor, landing page, drag-and-drop, elementor, visual edito
 Requires at least: 6.0
 Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 3.19.0
+Stable tag: 3.19.2
 Beta tag: 3.19.0-beta6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -246,6 +246,18 @@ You can also add a new language via [translate.wordpress.org](https://go.element
 6. **Motion Effects** - Add entrance animations and transitions to any element in your website to captivate visitors.
 
 == Changelog ==
+
+= 3.19.2 - 2024-02-07 =
+
+* Fix: Integration script not functioning as expected in Build with AI feature
+
+= 3.19.1 - 2024-02-05 =
+
+* Tweak: Improved text-based AI capabilities within the widget type
+* Security Fix: Addressed security weaknesses in template library mechanism
+* Fix: Improved code security enforcement in Media control
+* Fix: SVG Icons break the title layout when using Firefox and Safari browsers in Accordion widget ([#24925](https://github.com/elementor/elementor/issues/24925))
+* Fix: Missing hover state to dropdown in AI Containers modal
 
 = 3.19.0 - 2024-01-29 =
 

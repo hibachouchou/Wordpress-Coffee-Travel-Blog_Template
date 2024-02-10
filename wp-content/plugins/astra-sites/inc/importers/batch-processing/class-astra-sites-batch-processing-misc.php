@@ -59,7 +59,6 @@ if ( ! class_exists( 'Astra_Sites_Batch_Processing_Misc' ) ) :
 
 			Astra_Sites_Importer_Log::add( '---- Processing MISC ----' );
 			self::fix_nav_menus();
-			self::image_processing();
 		}
 
 		/**
@@ -109,30 +108,6 @@ if ( ! class_exists( 'Astra_Sites_Batch_Processing_Misc' ) ) :
 					}
 				}
 			}
-		}
-
-		/**
-		 * Process Images with the metadata.
-		 *
-		 * @since 3.0.20
-		 * @return void
-		 */
-		public static function image_processing() {
-			Astra_Sites_Importer_Log::add( '---- Processing Images Metadata ----' );
-			$all_attachments = get_option( 'st_attachments', array() );
-
-			if ( empty( $all_attachments ) ) {
-				return;
-			}
-
-			foreach ( $all_attachments as $attachment_id ) {
-				$file = get_attached_file( $attachment_id );
-				if ( false !== $file ) {
-					wp_generate_attachment_metadata( $attachment_id, $file );
-				}
-			}
-			update_option( 'st_attachments', array(), 'no' );
-			Astra_Sites_Importer_Log::add( '---- Processing Images Metadata Completed ----' );
 		}
 
 		/**

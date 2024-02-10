@@ -5,7 +5,7 @@ Tags: Elementor,Beaver Builder,Templates,Gutenberg,Block Editor,Astra Starter Si
 Requires at least: 4.4
 Requires PHP: 7.4
 Tested up to: 6.4
-Stable tag: 4.0.8
+Stable tag: 4.0.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,6 +134,15 @@ We are open to suggestions and would love to work on topics that our users are l
 8. Free Images by Pixabay right inside the WordPress media popup.
 
 == Changelog ==
+
+v4.0.11 - 10-February-2024
+- Fix: Resolved an issue where the import process stayed stuck at 95% with AI Website Builder.
+
+v4.0.10 - 07-February-2024
+- Fix: Resolved an issue where the Template Kit button was not visible.
+
+v4.0.9 - 05-February-2024
+- Fix: Resolved an issue where the category was not assigned after import.
 
 v4.0.8 - 01-February-2024
 - Improvement: AI Website Builder - Ability to create a site with desired features like Donations, Automation, Sales Funnels Video Player, etc for the website.

@@ -247,7 +247,7 @@ const Features = () => {
 					} ) }
 				{ /* Skeleton */ }
 				{ isFetchingStatus === fetchStatus.fetching &&
-					Array.from( { length: 5 } ).map( ( _, index ) => (
+					Array.from( { length: Object.keys(ICON_SET).length } ).map( ( _, index ) => (
 						<div
 							key={ index }
 							className="relative py-4 pl-4 pr-5 rounded-md shadow-sm border border-solid bg-white border-transparent"

@@ -486,6 +486,7 @@ const Images = ( { onClickPrevious, onClickNext } ) => {
 				business_name: businessName,
 				business_category: businessType.id.toString(),
 				business_category_name: businessType.name.toString(),
+				business_category_slug: businessType.slug.toString(),
 				images: selImages,
 				keywords,
 				business_address: businessContact?.address || '',

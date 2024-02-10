@@ -1,4 +1,4 @@
-/*! elementor - v3.19.0 - 29-01-2024 */
+/*! elementor - v3.19.0 - 07-02-2024 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -50802,14 +50802,20 @@ var PromotionBehavior = /*#__PURE__*/function (_Marionette$Behavior) {
     key: "ui",
     value: function ui() {
       return {
-        displayConditionsButton: '.eicon-flow.e-control-display-conditions-promotion'
+        displayConditionsButton: '.eicon-flow.e-control-display-conditions-promotion',
+        scrollingEffectsButton: '.e-control-scrolling-effects-promotion',
+        mouseEffectsButton: '.e-control-mouse-effects-promotion',
+        stickyEffectsButton: '.e-control-sticky-effects-promotion'
       };
     }
   }, {
     key: "events",
     value: function events() {
       return {
-        'click @ui.displayConditionsButton': 'onClickControlButtonDisplayConditions'
+        'click @ui.displayConditionsButton': 'onClickControlButtonDisplayConditions',
+        'click @ui.scrollingEffectsButton': 'onClickControlButtonScrollingEffects',
+        'click @ui.mouseEffectsButton': 'onClickControlButtonMouseEffects',
+        'click @ui.stickyEffectsButton': 'onClickControlButtonStickyEffects'
       };
     }
   }, {
@@ -50822,6 +50828,51 @@ var PromotionBehavior = /*#__PURE__*/function (_Marionette$Behavior) {
         targetElement: this.el,
         actionButton: {
           url: 'https://go.elementor.com/go-pro-display-conditions/',
+          text: __('Upgrade Now', 'elementor')
+        }
+      };
+      elementor.promotion.showDialog(dialogOptions);
+    }
+  }, {
+    key: "onClickControlButtonScrollingEffects",
+    value: function onClickControlButtonScrollingEffects(event) {
+      event.stopPropagation();
+      var dialogOptions = {
+        title: __('Scrolling Effects', 'elementor'),
+        content: __('Get Scrolling Effects such as <br /> vertical/horizontal scroll, transparency,<br /> and more with Elementor Pro.', 'elementor'),
+        targetElement: this.el,
+        actionButton: {
+          url: 'https://go.elementor.com/go-pro-scrolling-effects-advanced/',
+          text: __('Upgrade Now', 'elementor')
+        }
+      };
+      elementor.promotion.showDialog(dialogOptions);
+    }
+  }, {
+    key: "onClickControlButtonMouseEffects",
+    value: function onClickControlButtonMouseEffects(event) {
+      event.stopPropagation();
+      var dialogOptions = {
+        title: __('Mouse Effects', 'elementor'),
+        content: __('Add a Mouse Track or 3d Tilt effect with<br />Elementor Pro.', 'elementor'),
+        targetElement: this.el,
+        actionButton: {
+          url: 'https://go.elementor.com/go-pro-motion-effects-advanced/',
+          text: __('Upgrade Now', 'elementor')
+        }
+      };
+      elementor.promotion.showDialog(dialogOptions);
+    }
+  }, {
+    key: "onClickControlButtonStickyEffects",
+    value: function onClickControlButtonStickyEffects(event) {
+      event.stopPropagation();
+      var dialogOptions = {
+        title: __('Sticky', 'elementor'),
+        content: __('Make any element on your page sticky and<br />keep them in sight at the top or bottom of<br />the screen.', 'elementor'),
+        targetElement: this.el,
+        actionButton: {
+          url: 'https://go.elementor.com/go-pro-sticky-element-advanced/',
           text: __('Upgrade Now', 'elementor')
         }
       };
@@ -50885,7 +50936,8 @@ var Module = /*#__PURE__*/function (_elementorModules$edi) {
   }, {
     key: "registerControlBehavior",
     value: function registerControlBehavior(behaviors, view) {
-      if ('display_conditions_pro' !== view.options.model.get('name')) {
+      var promotionsToSkip = ['display_conditions_pro', 'scrolling_effects_pro', 'mouse_effects_pro', 'sticky_pro'];
+      if (!promotionsToSkip.includes(view.options.model.get('name'))) {
         return behaviors;
       }
       if (!behaviors) {

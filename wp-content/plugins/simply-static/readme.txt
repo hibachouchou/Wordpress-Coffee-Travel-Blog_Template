@@ -4,7 +4,7 @@ Tags: HTML, static website generator, static site, secure, fast
 Requires at least: 6.3
 Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 3.1.5
+Stable tag: 3.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,20 +121,36 @@ Simply Static Pro has a detailed and comprehensive integration with WP-CLI.
 
 Control every option, run different kinds of exports and more with the WP-CLI integration.
 
-
-= Multisite =
-
-Export your entire network, subsites, change settings on the network level and more.
-
-The multisite integration of Simply Static Pro brings your static network to the next level.
-
-
 = Minification =
 
 Automatically minfiy HTML, CSS and JavaScript files on your static site.
 
 We can even minify inline CSS & JavaScript.
 
+= Optimization =
+
+Replace default WordPress paths and completely hide that you are using WordPress behind the scenes.
+
+Replace:
+
+* wp-content
+* wp-includes
+* wp-content/plugins/
+* wp-content/themes/
+* wp-content/uploads/
+
+
+Hide & Disable:
+
+Disabled unwanted features in WordPress before running an static export like:
+
+* XML-RPC
+* REST API URLs
+* Emoji support
+* Shortlink support
+* WordPress version in HTML
+
+and much more.
 
 = Get the Pro version =
 
@@ -222,6 +238,16 @@ Simply Static creates a static copy of your WordPress site that is intended to b
 
 == Changelog ==
 
+= 3.1.6 =
+
+* new multisite integration (network, import/export subsites)
+* improved 404 page handling
+* improved secure debug log handling
+* plugin compatibility database integration
+* admin UI improvements (labels, helper texts..)
+* updated translation files
+* improved version output in admin UI
+
 = 3.1.5 =
 
 * refactored additional settings
@@ -231,6 +257,7 @@ Simply Static creates a static copy of your WordPress site that is intended to b
 * improved sanitization for multiline fields
 * load textdomain in init hook instead of plugins_loaded
 * NPM packages updated to latest releases
+
 
 = 3.1.4 =
 

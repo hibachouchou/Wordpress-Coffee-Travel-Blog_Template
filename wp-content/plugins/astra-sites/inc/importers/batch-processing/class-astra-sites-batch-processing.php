@@ -145,6 +145,12 @@ if ( ! class_exists( 'Astra_Sites_Batch_Processing' ) ) :
 			// Prepare Misc.
 			require_once ASTRA_SITES_DIR . 'inc/importers/batch-processing/class-astra-sites-batch-processing-misc.php';
 
+			// Prepare Images.
+			require_once ASTRA_SITES_DIR . 'inc/importers/batch-processing/class-astra-sites-batch-processing-images.php';
+
+			// Prepare Cleanup.
+			require_once ASTRA_SITES_DIR . 'inc/importers/batch-processing/class-astra-sites-batch-processing-cleanup.php';
+
 			// Prepare Customizer.
 			require_once ASTRA_SITES_DIR . 'inc/importers/batch-processing/class-astra-sites-batch-processing-customizer.php';
 
@@ -948,6 +954,20 @@ if ( ! class_exists( 'Astra_Sites_Batch_Processing' ) ) :
 
 			// Add "customizer" in import [queue].
 			$classes[] = Astra_Sites_Batch_Processing_Customizer::get_instance();
+
+			$all_attachments = get_option( 'st_attachments', array() );
+			$count = count( $all_attachments );
+
+			if ( ! empty( $count ) ) {
+				$no_of_times = (int) ceil( $count / 10 ); // Divide in chunks of 10.
+
+				for ( $i = 1; $i <= $no_of_times; $i++ ) {
+					// Add Image Processing in chunks of 10.
+					$classes[] = new Astra_Sites_Batch_Processing_Images();
+				}
+
+				$classes[] = new Astra_Sites_Batch_Processing_Cleanup();
+			}
 
 			if ( defined( 'WP_CLI' ) ) {
 				WP_CLI::line( 'Batch Process Started..' );
